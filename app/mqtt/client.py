@@ -24,7 +24,8 @@ class POSMQTTClient:
             "transactions": self._handle_transaction,
             "heartbeat": self._handle_heartbeat,
             "inventory": self._handle_inventory,
-            "alerts": self._handle_alert
+            "alerts": self._handle_alert,
+            "ack": self._handle_ack
         }
     
     def _on_connect(self, client, userdata, flags, rc):
@@ -124,6 +125,10 @@ class POSMQTTClient:
             logger.warning(f"🚨 Alert from {topic.terminal_id}: {alert.message}")
         except Exception as e:
             logger.error(f"Alert processing failed: {e}")
+    
+    def _handle_ack(self, payload: dict, topic: TopicStructure):
+        """Process acknowledgment"""
+        logger.debug(f"✅ Acknowledgement received for {topic.store_id}/{topic.terminal_id}: {payload}")
     
     def connect(self):
         self.client.connect(settings.MQTT_BROKER_HOST, settings.MQTT_BROKER_PORT, settings.MQTT_KEEPALIVE)

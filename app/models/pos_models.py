@@ -75,7 +75,7 @@ class TopicStructure(BaseModel):
     root: str
     store_id: str
     terminal_id: str
-    message_type: Literal["transactions", "heartbeat", "inventory", "alerts"]
+    message_type: Literal["transactions", "heartbeat", "inventory", "alerts", "ack"]
     
     @classmethod
     def from_topic(cls, topic: str):
