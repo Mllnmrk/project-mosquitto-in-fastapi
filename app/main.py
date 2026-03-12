@@ -1,88 +1,112 @@
-from fastapi import FastAPI, HTTPException, BackgroundTasks
-from pydantic import BaseModel
-from typing import Optional, List, Dict, Any
-import asyncio
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Query
+from fastapi.middleware.cors import CORSMiddleware
+from typing import List, Optional
+from decimal import Decimal
 
-from .mqtt_client import mqtt_client
-from .pubsub_service import message_store, setup_subscriptions
+from .config import settings
+from .mqtt.client import pos_mqtt_client
+from .db.memory_db import pos_store
+from .models.schemas import (
+    TransactionResponse, PublishRequest, StoreStatsResponse, 
+    TerminalStatusResponse
+)
+from .models.pos_models import POSTransaction
 
 app = FastAPI(
-    title="FastAPI MQTT Pub/Sub",
-    description="Simple MQTT pub/sub with Mosquitto",
-    version="1.0.0"
+    title=settings.API_TITLE,
+    version=settings.API_VERSION,
+    description="Real-time POS Transaction Processing Gateway"
 )
 
-# Request/Response models
-class PublishRequest(BaseModel):
-    topic: str
-    message: Dict[str, Any]
-    qos: Optional[int] = 0
-
-class SubscriptionRequest(BaseModel):
-    topic: str
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
-async def startup_event():
-    """Connect to MQTT broker on startup"""
-    mqtt_client.connect()
-    setup_subscriptions()
+async def startup():
+    pos_mqtt_client.connect()
 
 @app.on_event("shutdown")
-async def shutdown_event():
-    """Disconnect from MQTT broker on shutdown"""
-    mqtt_client.disconnect()
+async def shutdown():
+    pos_mqtt_client.disconnect()
 
 @app.get("/")
 async def root():
     return {
-        "message": "FastAPI MQTT Pub/Sub Server",
-        "endpoints": {
-            "publish": "POST /publish",
-            "subscribe": "POST /subscribe",
-            "messages": "GET /messages/{topic}",
-            "topics": "GET /topics"
-        }
+        "service": "POS MQTT Gateway",
+        "version": settings.API_VERSION,
+        "mqtt_broker": f"{settings.MQTT_BROKER_HOST}:{settings.MQTT_BROKER_PORT}",
+        "endpoints": [
+            "GET /stores/{store_id}/transactions",
+            "GET /stores/{store_id}/stats",
+            "GET /stores/{store_id}/terminals/status",
+            "POST /publish",
+            "GET /health"
+        ]
     }
+
+@app.get("/stores/{store_id}/transactions", response_model=List[TransactionResponse])
+async def get_transactions(
+    store_id: str,
+    terminal_id: Optional[str] = None,
+    limit: int = Query(100, ge=1, le=1000)
+):
+    """Get transactions for a store or specific terminal"""
+    transactions = pos_store.get_transactions(store_id, terminal_id, limit)
+    
+    result = []
+    for tx in transactions:
+        tx_dict = tx.model_dump()
+        tx_dict["total"] = str(tx.calculate_total())
+        result.append(tx_dict)
+    
+    return result
+
+@app.get("/stores/{store_id}/stats", response_model=StoreStatsResponse)
+async def get_store_stats(store_id: str):
+    """Get store statistics"""
+    stats = pos_store.get_store_stats(store_id)
+    terminals = pos_store.get_terminal_status(store_id)
+    
+    active = sum(1 for t in terminals if t["online"])
+    offline = len(terminals) - active
+    
+    return {
+        "store_id": store_id,
+        **stats,
+        "active_terminals": active,
+        "offline_terminals": offline
+    }
+
+@app.get("/stores/{store_id}/terminals/status", response_model=List[TerminalStatusResponse])
+async def get_terminal_status(
+    store_id: str,
+    terminal_id: Optional[str] = None
+):
+    """Get status of terminals in a store"""
+    return pos_store.get_terminal_status(store_id, terminal_id)
 
 @app.post("/publish")
 async def publish_message(request: PublishRequest):
-    """Publish a message to an MQTT topic"""
-    success = mqtt_client.publish(request.topic, request.message, request.qos)
+    """Manually publish a message to MQTT topic"""
+    success = pos_mqtt_client.publish(request.topic, request.message, request.qos)
     if success:
-        return {"status": "published", "topic": request.topic, "message": request.message}
-    else:
-        raise HTTPException(status_code=500, detail="Failed to publish message")
-
-@app.post("/subscribe")
-async def subscribe_topic(request: SubscriptionRequest):
-    """Subscribe to an MQTT topic"""
-    def callback(payload):
-        message_store.add(request.topic, payload)
-    
-    mqtt_client.subscribe(request.topic, callback)
-    return {"status": "subscribed", "topic": request.topic}
-
-@app.get("/messages/{topic}")
-async def get_messages(topic: str, last_n: int = 10):
-    """Get last N messages from a topic"""
-    messages = message_store.get(topic, last_n)
-    return {
-        "topic": topic,
-        "count": len(messages),
-        "messages": messages
-    }
-
-@app.get("/topics")
-async def get_topics():
-    """Get all topics with stored messages"""
-    return {
-        "topics": message_store.get_all_topics()
-    }
+        return {"status": "published", "topic": request.topic}
+    raise HTTPException(status_code=500, detail="Failed to publish")
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
+    """System health check"""
     return {
         "status": "healthy",
-        "mqtt_connected": mqtt_client.client.is_connected()
+        "mqtt_connected": pos_mqtt_client.client.is_connected(),
+        "stores_tracked": len(pos_store._store_stats),
+        "terminals_online": sum(
+            1 for store in pos_store._store_stats.keys()
+            for t in pos_store.get_terminal_status(store) if t["online"]
+        )
     }
