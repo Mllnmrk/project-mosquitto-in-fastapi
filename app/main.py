@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, BackgroundTasks, Query
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional
 from decimal import Decimal
+import time
 
 from .config import settings
 from .mqtt.client import pos_mqtt_client
@@ -11,6 +12,10 @@ from .models.schemas import (
     TerminalStatusResponse
 )
 from .models.pos_models import POSTransaction
+import logging
+from datetime import datetime
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
     title=settings.API_TITLE,
@@ -93,9 +98,29 @@ async def get_terminal_status(
 @app.post("/publish")
 async def publish_message(request: PublishRequest):
     """Manually publish a message to MQTT topic"""
-    success = pos_mqtt_client.publish(request.topic, request.message, request.qos)
+    # --- PULL: measure time to receive and parse the request ---
+    pull_start = time.perf_counter()
+    topic = request.topic
+    message = request.message
+    qos = request.qos
+    pull_end = time.perf_counter()
+    pull_duration_ms = round((pull_end - pull_start) * 1000, 3)
+    logger.info(f"📥 [PULL] Request received for topic '{topic}' — pull duration: {pull_duration_ms} ms")
+
+    # --- PUSH: measure time to publish to MQTT broker ---
+    push_start = time.perf_counter()
+    success = pos_mqtt_client.publish(topic, message, qos)
+    push_end = time.perf_counter()
+    push_duration_ms = round((push_end - push_start) * 1000, 3)
+
     if success:
-        return {"status": "published", "topic": request.topic}
+        logger.info(f"📤 [PUSH] Message published to '{topic}' — push duration: {push_duration_ms} ms")
+        return {
+            "status": "published",
+            "topic": topic,
+            "pull_duration_ms": pull_duration_ms,
+            "push_duration_ms": push_duration_ms,
+        }
     raise HTTPException(status_code=500, detail="Failed to publish")
 
 @app.get("/health")
