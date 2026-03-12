@@ -136,19 +136,6 @@ allow_anonymous true
 poetry install
 ```
 
-### Environment Variables (Optional)
-
-The app reads from a `.env` file. Create one at the project root to override defaults:
-
-```env
-MQTT_BROKER_HOST=localhost
-MQTT_BROKER_PORT=1883
-MQTT_KEEPALIVE=60
-MQTT_QOS=1
-MAX_TRANSACTIONS_PER_TERMINAL=1000
-MAX_HEARTBEAT_AGE_MINUTES=5
-```
-
 ---
 
 ## 4. Run the Application
