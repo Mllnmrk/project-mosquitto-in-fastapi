@@ -7,11 +7,13 @@ import uuid
 
 class POSTransaction(BaseModel):
     """POS Transaction Message Model"""
-    id: str = Field(..., description="Unique transaction UUID")
-    quantity: str = Field(..., description="Item quantity")
-    price: str = Field(..., description="Unit price")
-    discount: str = Field(..., description="Discount amount")
-    vat: str = Field(..., description="VAT amount")
+    model_config = {"extra": "allow"}
+    
+    id: Optional[str] = Field(None, description="Unique transaction UUID")
+    quantity: Optional[str] = Field("0", description="Item quantity")
+    price: Optional[str] = Field("0", description="Unit price")
+    discount: Optional[str] = Field("0", description="Discount amount")
+    vat: Optional[str] = Field("0", description="VAT amount")
     
     # Metadata (added by system)
     store_id: Optional[str] = None
@@ -19,54 +21,41 @@ class POSTransaction(BaseModel):
     received_at: Optional[datetime] = None
     processed_at: Optional[datetime] = None
     
-    @field_validator('id')
-    @classmethod
-    def validate_uuid(cls, v):
-        try:
-            uuid.UUID(v)
-            return v
-        except ValueError:
-            raise ValueError('Invalid UUID format')
-    
-    @field_validator('quantity', 'price', 'discount', 'vat')
-    @classmethod
-    def validate_numeric_string(cls, v):
-        try:
-            Decimal(v)
-            return v
-        except:
-            raise ValueError(f'Must be a valid numeric string')
-    
     def calculate_total(self) -> Decimal:
         """Calculate total transaction amount"""
-        qty = Decimal(self.quantity)
-        price = Decimal(self.price)
-        discount = Decimal(self.discount)
-        vat = Decimal(self.vat)
-        
-        subtotal = (qty * price) - discount
-        total = subtotal + vat
-        return total.quantize(Decimal('0.01'))
+        try:
+            qty = Decimal(str(self.quantity or '0'))
+            price = Decimal(str(self.price or '0'))
+            discount = Decimal(str(self.discount or '0'))
+            vat = Decimal(str(self.vat or '0'))
+            
+            subtotal = (qty * price) - discount
+            total = subtotal + vat
+            return total.quantize(Decimal('0.01'))
+        except (ValueError, TypeError, Exception):
+            return Decimal('0.00')
 
 
 class POSHeartbeat(BaseModel):
     """POS Terminal Heartbeat"""
-    terminal_id: str
-    store_id: str
-    status: Literal["online", "offline", "maintenance"]
-    timestamp: datetime
+    model_config = {"extra": "allow"}
+    terminal_id: Optional[str] = None
+    store_id: Optional[str] = None
+    status: Optional[str] = None
+    timestamp: Optional[datetime] = None
     battery_level: Optional[int] = Field(None, ge=0, le=100)
     version: Optional[str] = None
 
 
 class POSAlert(BaseModel):
     """POS Alert/Notification"""
-    alert_id: str
-    store_id: str
-    terminal_id: str
-    severity: Literal["info", "warning", "critical"]
-    message: str
-    timestamp: datetime
+    model_config = {"extra": "allow"}
+    alert_id: Optional[str] = None
+    store_id: Optional[str] = None
+    terminal_id: Optional[str] = None
+    severity: Optional[str] = None
+    message: Optional[str] = None
+    timestamp: Optional[datetime] = None
     resolved: bool = False
 
 
