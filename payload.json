@@ -1,940 +1,839 @@
 {
+  "topic": "pos/store001/terminal03/transactions",
+  "message": {
     "metadata": {
-        "system": "POS-System v2.1",
-        "generated": "2026-03-16T17:00:21.794794",
-        "store_chain": "FreshMarket Retail",
-        "date_range": "2026-03-15",
-        "transaction_count": 18,
-        "total_sales": 385.22
+      "system": "POS-System v2.1",
+      "generated": "2026-03-16T17:00:21.794794",
+      "store_chain": "FreshMarket Retail",
+      "date_range": "2026-03-15",
+      "transaction_count": "18",
+      "total_sales": "385.22"
     },
     "transactions": [
-        {
-            "txn_id": "TXN202603150800",
-            "datetime": "2026-03-15T08:00:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP100",
-            "items": [
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 2,
-                    "unit_price": 4.99,
-                    "total": 9.98
-                }
-            ],
-            "payment": {
-                "method": "Credit Card",
-                "card_last4": "1000"
-            },
-            "totals": {
-                "subtotal": 13.77,
-                "tax": 1.2,
-                "total": 14.97
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": true
-            }
+      {
+        "txn_id": "TXN202603150910",
+        "datetime": "2026-03-15T09:10:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP174",
+        "items": [
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "3.79",
+            "total": "7.58"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          }
+        ],
+        "payment": {
+          "method": "Cash",
+          "card_last4": "None"
         },
-        {
-            "txn_id": "TXN202603150835",
-            "datetime": "2026-03-15T08:35:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP137",
-            "items": [
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 1,
-                    "unit_price": 2.99,
-                    "total": 2.99
-                },
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 4.29,
-                    "total": 8.58
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                }
-            ],
-            "payment": {
-                "method": "Debit Card",
-                "card_last4": "2234"
-            },
-            "totals": {
-                "subtotal": 13.46,
-                "tax": 1.18,
-                "total": 14.64
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
+        "totals": {
+          "subtotal": "20.94",
+          "tax": "1.83",
+          "total": "22.77"
         },
-        {
-            "txn_id": "TXN202603150910",
-            "datetime": "2026-03-15T09:10:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP174",
-            "items": [
-                {
-                    "sku": "EGG003",
-                    "name": "Large Eggs Dozen",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 5.49,
-                    "total": 5.49
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 3.79,
-                    "total": 7.58
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                }
-            ],
-            "payment": {
-                "method": "Cash",
-                "card_last4": null
-            },
-            "totals": {
-                "subtotal": 20.94,
-                "tax": 1.83,
-                "total": 22.77
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603150945",
-            "datetime": "2026-03-15T09:45:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP211",
-            "items": [
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 1,
-                    "unit_price": 6.99,
-                    "total": 6.99
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 2,
-                    "unit_price": 4.99,
-                    "total": 9.98
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "BEF008",
-                    "name": "Ground Beef 80/20 lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 5.99,
-                    "total": 11.98
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                }
-            ],
-            "payment": {
-                "method": "Mobile Pay",
-                "card_last4": "4702"
-            },
-            "totals": {
-                "subtotal": 34.63,
-                "tax": 3.03,
-                "total": 37.66
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": true
-            }
-        },
-        {
-            "txn_id": "TXN202603151020",
-            "datetime": "2026-03-15T10:20:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP248",
-            "items": [
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 4.29,
-                    "total": 4.29
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 2,
-                    "unit_price": 1.89,
-                    "total": 3.78
-                }
-            ],
-            "payment": {
-                "method": "Credit Card",
-                "card_last4": "5936"
-            },
-            "totals": {
-                "subtotal": 8.07,
-                "tax": 0.71,
-                "total": 8.78
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151055",
-            "datetime": "2026-03-15T10:55:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP285",
-            "items": [
-                {
-                    "sku": "CER012",
-                    "name": "Honey Nut Cereal 18oz",
-                    "category": "Breakfast",
-                    "qty": 1,
-                    "unit_price": 4.79,
-                    "total": 4.79
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 2,
-                    "unit_price": 4.99,
-                    "total": 9.98
-                },
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 4.29,
-                    "total": 4.29
-                }
-            ],
-            "payment": {
-                "method": "Debit Card",
-                "card_last4": "7170"
-            },
-            "totals": {
-                "subtotal": 19.06,
-                "tax": 1.67,
-                "total": 20.73
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151130",
-            "datetime": "2026-03-15T11:30:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP322",
-            "items": [
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 6.99,
-                    "total": 13.98
-                },
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 4.29,
-                    "total": 4.29
-                },
-                {
-                    "sku": "BEF008",
-                    "name": "Ground Beef 80/20 lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 5.99,
-                    "total": 11.98
-                }
-            ],
-            "payment": {
-                "method": "Cash",
-                "card_last4": null
-            },
-            "totals": {
-                "subtotal": 32.14,
-                "tax": 2.81,
-                "total": 34.95
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": true
-            }
-        },
-        {
-            "txn_id": "TXN202603151205",
-            "datetime": "2026-03-15T12:05:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP359",
-            "items": [
-                {
-                    "sku": "CER012",
-                    "name": "Honey Nut Cereal 18oz",
-                    "category": "Breakfast",
-                    "qty": 1,
-                    "unit_price": 4.79,
-                    "total": 4.79
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 1,
-                    "unit_price": 4.99,
-                    "total": 4.99
-                },
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 6.99,
-                    "total": 13.98
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                }
-            ],
-            "payment": {
-                "method": "Mobile Pay",
-                "card_last4": "9638"
-            },
-            "totals": {
-                "subtotal": 33.53,
-                "tax": 2.93,
-                "total": 36.46
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151240",
-            "datetime": "2026-03-15T12:40:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP396",
-            "items": [
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 4.29,
-                    "total": 4.29
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 3.79,
-                    "total": 7.58
-                }
-            ],
-            "payment": {
-                "method": "Credit Card",
-                "card_last4": "1074"
-            },
-            "totals": {
-                "subtotal": 13.76,
-                "tax": 1.2,
-                "total": 14.96
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": true
-            }
-        },
-        {
-            "txn_id": "TXN202603151315",
-            "datetime": "2026-03-15T13:15:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP433",
-            "items": [
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                },
-                {
-                    "sku": "BEF008",
-                    "name": "Ground Beef 80/20 lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 5.99,
-                    "total": 11.98
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 1,
-                    "unit_price": 4.99,
-                    "total": 4.99
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                }
-            ],
-            "payment": {
-                "method": "Debit Card",
-                "card_last4": "2308"
-            },
-            "totals": {
-                "subtotal": 26.74,
-                "tax": 2.34,
-                "total": 29.08
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151350",
-            "datetime": "2026-03-15T13:50:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP470",
-            "items": [
-                {
-                    "sku": "EGG003",
-                    "name": "Large Eggs Dozen",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 5.49,
-                    "total": 5.49
-                },
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 4.29,
-                    "total": 8.58
-                },
-                {
-                    "sku": "CER012",
-                    "name": "Honey Nut Cereal 18oz",
-                    "category": "Breakfast",
-                    "qty": 1,
-                    "unit_price": 4.79,
-                    "total": 4.79
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 2,
-                    "unit_price": 1.89,
-                    "total": 3.78
-                }
-            ],
-            "payment": {
-                "method": "Cash",
-                "card_last4": null
-            },
-            "totals": {
-                "subtotal": 22.64,
-                "tax": 1.98,
-                "total": 24.62
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151425",
-            "datetime": "2026-03-15T14:25:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP507",
-            "items": [
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 1,
-                    "unit_price": 4.99,
-                    "total": 4.99
-                },
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 6.99,
-                    "total": 13.98
-                }
-            ],
-            "payment": {
-                "method": "Mobile Pay",
-                "card_last4": "4776"
-            },
-            "totals": {
-                "subtotal": 18.97,
-                "tax": 1.66,
-                "total": 20.63
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": true
-            }
-        },
-        {
-            "txn_id": "TXN202603151500",
-            "datetime": "2026-03-15T15:00:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP544",
-            "items": [
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 4.29,
-                    "total": 4.29
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                }
-            ],
-            "payment": {
-                "method": "Credit Card",
-                "card_last4": "6010"
-            },
-            "totals": {
-                "subtotal": 15.95,
-                "tax": 1.4,
-                "total": 17.35
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151535",
-            "datetime": "2026-03-15T15:35:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP581",
-            "items": [
-                {
-                    "sku": "BEF008",
-                    "name": "Ground Beef 80/20 lb",
-                    "category": "Meat",
-                    "qty": 1,
-                    "unit_price": 5.99,
-                    "total": 5.99
-                },
-                {
-                    "sku": "CER012",
-                    "name": "Honey Nut Cereal 18oz",
-                    "category": "Breakfast",
-                    "qty": 2,
-                    "unit_price": 4.79,
-                    "total": 9.58
-                },
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 1,
-                    "unit_price": 6.99,
-                    "total": 6.99
-                }
-            ],
-            "payment": {
-                "method": "Debit Card",
-                "card_last4": "7244"
-            },
-            "totals": {
-                "subtotal": 22.56,
-                "tax": 1.97,
-                "total": 24.53
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151610",
-            "datetime": "2026-03-15T16:10:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP618",
-            "items": [
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                },
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 1,
-                    "unit_price": 4.99,
-                    "total": 4.99
-                },
-                {
-                    "sku": "EGG003",
-                    "name": "Large Eggs Dozen",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 5.49,
-                    "total": 10.98
-                }
-            ],
-            "payment": {
-                "method": "Cash",
-                "card_last4": null
-            },
-            "totals": {
-                "subtotal": 23.84,
-                "tax": 2.09,
-                "total": 25.93
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": true
-            }
-        },
-        {
-            "txn_id": "TXN202603151645",
-            "datetime": "2026-03-15T16:45:00",
-            "store_id": "STORE001",
-            "store_name": "Downtown Mart",
-            "location": "New York, NY",
-            "register": "REG1",
-            "cashier": "EMP655",
-            "items": [
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                },
-                {
-                    "sku": "CHS004",
-                    "name": "Sharp Cheddar Cheese",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 4.29,
-                    "total": 8.58
-                },
-                {
-                    "sku": "BEF008",
-                    "name": "Ground Beef 80/20 lb",
-                    "category": "Meat",
-                    "qty": 1,
-                    "unit_price": 5.99,
-                    "total": 5.99
-                }
-            ],
-            "payment": {
-                "method": "Mobile Pay",
-                "card_last4": "9712"
-            },
-            "totals": {
-                "subtotal": 18.36,
-                "tax": 1.61,
-                "total": 19.97
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151720",
-            "datetime": "2026-03-15T17:20:00",
-            "store_id": "STORE002",
-            "store_name": "Westside Grocery",
-            "location": "Los Angeles, CA",
-            "register": "REG2",
-            "cashier": "EMP692",
-            "items": [
-                {
-                    "sku": "CER012",
-                    "name": "Honey Nut Cereal 18oz",
-                    "category": "Breakfast",
-                    "qty": 1,
-                    "unit_price": 4.79,
-                    "total": 4.79
-                },
-                {
-                    "sku": "EGG003",
-                    "name": "Large Eggs Dozen",
-                    "category": "Dairy",
-                    "qty": 2,
-                    "unit_price": 5.49,
-                    "total": 10.98
-                },
-                {
-                    "sku": "PST010",
-                    "name": "Spaghetti Pasta 16oz",
-                    "category": "Pantry",
-                    "qty": 1,
-                    "unit_price": 1.89,
-                    "total": 1.89
-                },
-                {
-                    "sku": "APL005",
-                    "name": "Honeycrisp Apples lb",
-                    "category": "Produce",
-                    "qty": 2,
-                    "unit_price": 2.99,
-                    "total": 5.98
-                }
-            ],
-            "payment": {
-                "method": "Credit Card",
-                "card_last4": "1148"
-            },
-            "totals": {
-                "subtotal": 23.64,
-                "tax": 2.07,
-                "total": 25.71
-            },
-            "receipt": {
-                "printed": true,
-                "emailed": false
-            }
-        },
-        {
-            "txn_id": "TXN202603151755",
-            "datetime": "2026-03-15T17:55:00",
-            "store_id": "STORE003",
-            "store_name": "Lakeside Market",
-            "location": "Chicago, IL",
-            "register": "REG3",
-            "cashier": "EMP729",
-            "items": [
-                {
-                    "sku": "BRD001",
-                    "name": "Organic Whole Wheat Bread",
-                    "category": "Bakery",
-                    "qty": 1,
-                    "unit_price": 4.99,
-                    "total": 4.99
-                },
-                {
-                    "sku": "CHS007",
-                    "name": "Boneless Chicken Breast lb",
-                    "category": "Meat",
-                    "qty": 2,
-                    "unit_price": 6.99,
-                    "total": 13.98
-                },
-                {
-                    "sku": "MLK002",
-                    "name": "Whole Milk Gallon",
-                    "category": "Dairy",
-                    "qty": 1,
-                    "unit_price": 3.79,
-                    "total": 3.79
-                }
-            ],
-            "payment": {
-                "method": "Debit Card",
-                "card_last4": "2382"
-            },
-            "totals": {
-                "subtotal": 22.76,
-                "tax": 1.99,
-                "total": 24.75
-            },
-            "receipt": {
-                "printed": false,
-                "emailed": true
-            }
+        "receipt": {
+          "printed": "True",
+          "emailed": "False"
         }
+      },
+      {
+        "txn_id": "TXN202603150945",
+        "datetime": "2026-03-15T09:45:00",
+        "store_id": "STORE001",
+        "store_name": "Downtown Mart",
+        "location": "New York, NY",
+        "register": "REG1",
+        "cashier": "EMP211",
+        "items": [
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "1",
+            "unit_price": "6.99",
+            "total": "6.99"
+          },
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "2",
+            "unit_price": "4.99",
+            "total": "9.98"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "BEF008",
+            "name": "Ground Beef 80/20 lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "5.99",
+            "total": "11.98"
+          },
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          }
+        ],
+        "payment": {
+          "method": "Mobile Pay",
+          "card_last4": "4702"
+        },
+        "totals": {
+          "subtotal": "34.63",
+          "tax": "3.03",
+          "total": "37.66"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "True"
+        }
+      },
+      {
+        "txn_id": "TXN202603151020",
+        "datetime": "2026-03-15T10:20:00",
+        "store_id": "STORE002",
+        "store_name": "Westside Grocery",
+        "location": "Los Angeles, CA",
+        "register": "REG2",
+        "cashier": "EMP248",
+        "items": [
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "4.29",
+            "total": "4.29"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "2",
+            "unit_price": "1.89",
+            "total": "3.78"
+          }
+        ],
+        "payment": {
+          "method": "Credit Card",
+          "card_last4": "5936"
+        },
+        "totals": {
+          "subtotal": "8.07",
+          "tax": "0.71",
+          "total": "8.78"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151055",
+        "datetime": "2026-03-15T10:55:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP285",
+        "items": [
+          {
+            "sku": "CER012",
+            "name": "Honey Nut Cereal 18oz",
+            "category": "Breakfast",
+            "qty": "1",
+            "unit_price": "4.79",
+            "total": "4.79"
+          },
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "2",
+            "unit_price": "4.99",
+            "total": "9.98"
+          },
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "4.29",
+            "total": "4.29"
+          }
+        ],
+        "payment": {
+          "method": "Debit Card",
+          "card_last4": "7170"
+        },
+        "totals": {
+          "subtotal": "19.06",
+          "tax": "1.67",
+          "total": "20.73"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151130",
+        "datetime": "2026-03-15T11:30:00",
+        "store_id": "STORE001",
+        "store_name": "Downtown Mart",
+        "location": "New York, NY",
+        "register": "REG1",
+        "cashier": "EMP322",
+        "items": [
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "6.99",
+            "total": "13.98"
+          },
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "4.29",
+            "total": "4.29"
+          },
+          {
+            "sku": "BEF008",
+            "name": "Ground Beef 80/20 lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "5.99",
+            "total": "11.98"
+          }
+        ],
+        "payment": {
+          "method": "Cash",
+          "card_last4": "None"
+        },
+        "totals": {
+          "subtotal": "32.14",
+          "tax": "2.81",
+          "total": "34.95"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "True"
+        }
+      },
+      {
+        "txn_id": "TXN202603151205",
+        "datetime": "2026-03-15T12:05:00",
+        "store_id": "STORE002",
+        "store_name": "Westside Grocery",
+        "location": "Los Angeles, CA",
+        "register": "REG2",
+        "cashier": "EMP359",
+        "items": [
+          {
+            "sku": "CER012",
+            "name": "Honey Nut Cereal 18oz",
+            "category": "Breakfast",
+            "qty": "1",
+            "unit_price": "4.79",
+            "total": "4.79"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          },
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "1",
+            "unit_price": "4.99",
+            "total": "4.99"
+          },
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "6.99",
+            "total": "13.98"
+          },
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          }
+        ],
+        "payment": {
+          "method": "Mobile Pay",
+          "card_last4": "9638"
+        },
+        "totals": {
+          "subtotal": "33.53",
+          "tax": "2.93",
+          "total": "36.46"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151240",
+        "datetime": "2026-03-15T12:40:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP396",
+        "items": [
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "4.29",
+            "total": "4.29"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "3.79",
+            "total": "7.58"
+          }
+        ],
+        "payment": {
+          "method": "Credit Card",
+          "card_last4": "1074"
+        },
+        "totals": {
+          "subtotal": "13.76",
+          "tax": "1.2",
+          "total": "14.96"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "True"
+        }
+      },
+      {
+        "txn_id": "TXN202603151315",
+        "datetime": "2026-03-15T13:15:00",
+        "store_id": "STORE001",
+        "store_name": "Downtown Mart",
+        "location": "New York, NY",
+        "register": "REG1",
+        "cashier": "EMP433",
+        "items": [
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          },
+          {
+            "sku": "BEF008",
+            "name": "Ground Beef 80/20 lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "5.99",
+            "total": "11.98"
+          },
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "1",
+            "unit_price": "4.99",
+            "total": "4.99"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          }
+        ],
+        "payment": {
+          "method": "Debit Card",
+          "card_last4": "2308"
+        },
+        "totals": {
+          "subtotal": "26.74",
+          "tax": "2.34",
+          "total": "29.08"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151350",
+        "datetime": "2026-03-15T13:50:00",
+        "store_id": "STORE002",
+        "store_name": "Westside Grocery",
+        "location": "Los Angeles, CA",
+        "register": "REG2",
+        "cashier": "EMP470",
+        "items": [
+          {
+            "sku": "EGG003",
+            "name": "Large Eggs Dozen",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "5.49",
+            "total": "5.49"
+          },
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "4.29",
+            "total": "8.58"
+          },
+          {
+            "sku": "CER012",
+            "name": "Honey Nut Cereal 18oz",
+            "category": "Breakfast",
+            "qty": "1",
+            "unit_price": "4.79",
+            "total": "4.79"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "2",
+            "unit_price": "1.89",
+            "total": "3.78"
+          }
+        ],
+        "payment": {
+          "method": "Cash",
+          "card_last4": "None"
+        },
+        "totals": {
+          "subtotal": "22.64",
+          "tax": "1.98",
+          "total": "24.62"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151425",
+        "datetime": "2026-03-15T14:25:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP507",
+        "items": [
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "1",
+            "unit_price": "4.99",
+            "total": "4.99"
+          },
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "6.99",
+            "total": "13.98"
+          }
+        ],
+        "payment": {
+          "method": "Mobile Pay",
+          "card_last4": "4776"
+        },
+        "totals": {
+          "subtotal": "18.97",
+          "tax": "1.66",
+          "total": "20.63"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "True"
+        }
+      },
+      {
+        "txn_id": "TXN202603151500",
+        "datetime": "2026-03-15T15:00:00",
+        "store_id": "STORE001",
+        "store_name": "Downtown Mart",
+        "location": "New York, NY",
+        "register": "REG1",
+        "cashier": "EMP544",
+        "items": [
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "4.29",
+            "total": "4.29"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          },
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          }
+        ],
+        "payment": {
+          "method": "Credit Card",
+          "card_last4": "6010"
+        },
+        "totals": {
+          "subtotal": "15.95",
+          "tax": "1.4",
+          "total": "17.35"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151535",
+        "datetime": "2026-03-15T15:35:00",
+        "store_id": "STORE002",
+        "store_name": "Westside Grocery",
+        "location": "Los Angeles, CA",
+        "register": "REG2",
+        "cashier": "EMP581",
+        "items": [
+          {
+            "sku": "BEF008",
+            "name": "Ground Beef 80/20 lb",
+            "category": "Meat",
+            "qty": "1",
+            "unit_price": "5.99",
+            "total": "5.99"
+          },
+          {
+            "sku": "CER012",
+            "name": "Honey Nut Cereal 18oz",
+            "category": "Breakfast",
+            "qty": "2",
+            "unit_price": "4.79",
+            "total": "9.58"
+          },
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "1",
+            "unit_price": "6.99",
+            "total": "6.99"
+          }
+        ],
+        "payment": {
+          "method": "Debit Card",
+          "card_last4": "7244"
+        },
+        "totals": {
+          "subtotal": "22.56",
+          "tax": "1.97",
+          "total": "24.53"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151610",
+        "datetime": "2026-03-15T16:10:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP618",
+        "items": [
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          },
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "1",
+            "unit_price": "4.99",
+            "total": "4.99"
+          },
+          {
+            "sku": "EGG003",
+            "name": "Large Eggs Dozen",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "5.49",
+            "total": "10.98"
+          }
+        ],
+        "payment": {
+          "method": "Cash",
+          "card_last4": "None"
+        },
+        "totals": {
+          "subtotal": "23.84",
+          "tax": "2.09",
+          "total": "25.93"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "True"
+        }
+      },
+      {
+        "txn_id": "TXN202603151645",
+        "datetime": "2026-03-15T16:45:00",
+        "store_id": "STORE001",
+        "store_name": "Downtown Mart",
+        "location": "New York, NY",
+        "register": "REG1",
+        "cashier": "EMP655",
+        "items": [
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          },
+          {
+            "sku": "CHS004",
+            "name": "Sharp Cheddar Cheese",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "4.29",
+            "total": "8.58"
+          },
+          {
+            "sku": "BEF008",
+            "name": "Ground Beef 80/20 lb",
+            "category": "Meat",
+            "qty": "1",
+            "unit_price": "5.99",
+            "total": "5.99"
+          }
+        ],
+        "payment": {
+          "method": "Mobile Pay",
+          "card_last4": "9712"
+        },
+        "totals": {
+          "subtotal": "18.36",
+          "tax": "1.61",
+          "total": "19.97"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151720",
+        "datetime": "2026-03-15T17:20:00",
+        "store_id": "STORE002",
+        "store_name": "Westside Grocery",
+        "location": "Los Angeles, CA",
+        "register": "REG2",
+        "cashier": "EMP692",
+        "items": [
+          {
+            "sku": "CER012",
+            "name": "Honey Nut Cereal 18oz",
+            "category": "Breakfast",
+            "qty": "1",
+            "unit_price": "4.79",
+            "total": "4.79"
+          },
+          {
+            "sku": "EGG003",
+            "name": "Large Eggs Dozen",
+            "category": "Dairy",
+            "qty": "2",
+            "unit_price": "5.49",
+            "total": "10.98"
+          },
+          {
+            "sku": "PST010",
+            "name": "Spaghetti Pasta 16oz",
+            "category": "Pantry",
+            "qty": "1",
+            "unit_price": "1.89",
+            "total": "1.89"
+          },
+          {
+            "sku": "APL005",
+            "name": "Honeycrisp Apples lb",
+            "category": "Produce",
+            "qty": "2",
+            "unit_price": "2.99",
+            "total": "5.98"
+          }
+        ],
+        "payment": {
+          "method": "Credit Card",
+          "card_last4": "1148"
+        },
+        "totals": {
+          "subtotal": "23.64",
+          "tax": "2.07",
+          "total": "25.71"
+        },
+        "receipt": {
+          "printed": "True",
+          "emailed": "False"
+        }
+      },
+      {
+        "txn_id": "TXN202603151755",
+        "datetime": "2026-03-15T17:55:00",
+        "store_id": "STORE003",
+        "store_name": "Lakeside Market",
+        "location": "Chicago, IL",
+        "register": "REG3",
+        "cashier": "EMP729",
+        "items": [
+          {
+            "sku": "BRD001",
+            "name": "Organic Whole Wheat Bread",
+            "category": "Bakery",
+            "qty": "1",
+            "unit_price": "4.99",
+            "total": "4.99"
+          },
+          {
+            "sku": "CHS007",
+            "name": "Boneless Chicken Breast lb",
+            "category": "Meat",
+            "qty": "2",
+            "unit_price": "6.99",
+            "total": "13.98"
+          },
+          {
+            "sku": "MLK002",
+            "name": "Whole Milk Gallon",
+            "category": "Dairy",
+            "qty": "1",
+            "unit_price": "3.79",
+            "total": "3.79"
+          }
+        ],
+        "payment": {
+          "method": "Debit Card",
+          "card_last4": "2382"
+        },
+        "totals": {
+          "subtotal": "22.76",
+          "tax": "1.99",
+          "total": "24.75"
+        },
+        "receipt": {
+          "printed": "False",
+          "emailed": "True"
+        }
+      }
     ]
+  }
 }
