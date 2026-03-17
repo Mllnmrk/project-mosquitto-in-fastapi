@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.git
+logs/
+tests/
+.env
+README.md
